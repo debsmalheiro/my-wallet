@@ -2,13 +2,52 @@
 import React from 'react';
 
 // Style
-import { Container } from './styles';
+import { 
+    Container,
+    Header,
+    LogoImg,
+    Title,
+    MenuContainer,
+    MenuItemLink
+} from './styles';
+
+// Images
+import logoImg from '../../assets/logo.svg';
+
+// Icons
+import { 
+    MdDashboard,
+    MdArrowDownward,
+    MdArrowUpward, 
+    MdExitToApp
+} from 'react-icons/md';
 
 // Component
 const Aside: React.FC = () => {
     return (
         <Container>
-            Aside
+            <Header>
+                <LogoImg src={logoImg} alt="Logo My Wallet" />
+                <Title>My Wallet</Title>
+            </Header>
+            <MenuContainer>
+                <MenuItemLink href="#">
+                    <MdDashboard />
+                    Dashboard
+                </MenuItemLink>
+                <MenuItemLink href="#">
+                    <MdArrowDownward />
+                    Entradas
+                </MenuItemLink>
+                <MenuItemLink href="#">
+                    <MdArrowUpward />
+                    Saídas
+                </MenuItemLink>
+                <MenuItemLink href="#">
+                    <MdExitToApp />
+                    Sair
+                </MenuItemLink>
+            </MenuContainer>
         </Container>
     )
 }
