@@ -7,6 +7,9 @@ import { Container, Profile, Welcome, UserName } from './styles';
 // Emojis
 import emojis from '../../utils/emojis';
 
+// Components
+import Toggle from '../Toggle';
+
 // Component
 const MainHeader: React.FC = () => {
 
@@ -17,7 +20,7 @@ const MainHeader: React.FC = () => {
 
     return (
         <Container>
-            <h1>Toggle</h1>
+            <Toggle />
             <Profile>
                 <Welcome>Olá, {emoji}</Welcome>
                 <UserName> Déborah Malheiro</UserName>
