@@ -1,12 +1,18 @@
 // Dependencies
 import React from 'react';
 
+// Styles
+import {Container} from './styles';
+
+// Components
+import ContentHeader from '../../components/ContentHeader';
+
 // Component
 const Dashboard: React.FC = () => {
     return (
-        <>
-        <h1>Dashboard</h1>
-        </>
+        <Container>
+            <ContentHeader />
+        </Container>
     );
 }
 
