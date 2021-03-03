@@ -5,13 +5,13 @@ import React from 'react';
 import { Container } from './styles';
 
 // Component
-const Content: React.FC = ({ children }) => {
+const ContentHeader: React.FC = () => {
     return (
         <Container>
-            {children}
+            Content Header
         </Container>
     )
 }
 
 // Export module
-export default Content;
+export default ContentHeader;
