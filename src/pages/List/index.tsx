@@ -76,7 +76,7 @@ const List: React.FC<IRouteParms> = ({match}) => {
         amountFormatted: item.amount,
         frequency: item.frequency,
         dateFormatted: item.date,
-        tagColor: '#4E41F0',
+        tagColor: item.frequency === 'recorrente' ? '#4E41F0' : '#E44C4E',
       }
     })
 
