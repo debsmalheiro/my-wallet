@@ -31,19 +31,19 @@ const Aside: React.FC = () => {
                 <Title>My Wallet</Title>
             </Header>
             <MenuContainer>
-                <MenuItemLink href="#">
+                <MenuItemLink href="/dashboard">
                     <MdDashboard />
                     Dashboard
                 </MenuItemLink>
-                <MenuItemLink href="#">
+                <MenuItemLink href="/list/entry-balance">
                     <MdArrowDownward />
                     Entradas
                 </MenuItemLink>
-                <MenuItemLink href="#">
+                <MenuItemLink href="/list/exit-balance">
                     <MdArrowUpward />
                     Saídas
                 </MenuItemLink>
-                <MenuItemLink href="#">
+                <MenuItemLink href="/exit">
                     <MdExitToApp />
                     Sair
                 </MenuItemLink>
