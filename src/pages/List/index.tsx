@@ -37,6 +37,8 @@ interface IData {
 const List: React.FC<IRouteParms> = ({match}) => {
 
   const [data, setData] = useState<IData[]>([]);
+  const [monthSelected, setMonthSelected] = useState<string>(String(new Date().getMonth() + 1));
+  const [yearSelected, setYearSelected] = useState<string>(String(new Date().getFullYear()));
 
   const {type} = match.params;
 
@@ -68,14 +70,27 @@ const List: React.FC<IRouteParms> = ({match}) => {
   ];
 
   const years = [
-    { value: 2021, label: 2021 },
     { value: 2020, label: 2020 },
+    { value: 2021, label: 2021 },
   ];
 
   useEffect(() => {
-    const response = listData.map(item => {
+
+    /* Filtrando pelo mês e ano */
+    const filteredData = listData.filter(item => {
+
+      const date = new Date(item.date);
+      const month = String(date.getMonth() + 1);
+      const year = String(date.getFullYear());
+
+      return month === monthSelected && year === yearSelected; 
+    });
+
+    /* Formatando o dia, mês e ano */
+    const formattedData = filteredData.map(item => {
+
       return {
-        id: String(Math.random() * data.length),
+        id: String(new Date().getTime()) + item.amount,
         description: item.description,
         amountFormatted: formatCurrency(Number(item.amount)),
         frequency: item.frequency,
@@ -84,14 +99,22 @@ const List: React.FC<IRouteParms> = ({match}) => {
       }
     })
 
-    setData(response);
-  }, [])
+    setData(formattedData);
+  }, [listData, monthSelected, yearSelected])
 
   return (
     <Container>
       <ContentHeader title={pageTitle} lineColor={lineColor}>
-        <SelectInput options={months} />
-        <SelectInput options={years} />
+        <SelectInput 
+          options={months}
+          onChange={(e) => setMonthSelected(e.target.value)}
+          defaultValue={monthSelected}
+        />
+        <SelectInput
+          options={years}
+          onChange={(e) => setYearSelected(e.target.value)}
+          defaultValue={yearSelected}
+        />
       </ContentHeader>
 
       <Filters>
