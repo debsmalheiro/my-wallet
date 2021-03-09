@@ -2,17 +2,16 @@
 import React, {useState, useMemo} from 'react';
 
 // Styles
-import {Container} from './styles';
+import {Container, Content} from './styles';
 
 // Components
 import ContentHeader from '../../components/ContentHeader';
 import SelectInput from '../../components/SelectInput/index';
 import gains from '../../repositories/gains';
 import expenses from '../../repositories/expenses';
+import WalletBox from '../../components/WalletBox';
 
 // Utils
-// import formatCurrency from '../../utils/formatCurrency';
-// import formatDate from '../../utils/formatDate';
 import listOfMonths from '../../utils/months';
 
 // Component
@@ -92,6 +91,29 @@ const Dashboard: React.FC = () => {
                 defaultValue={yearSelected}
                 />
             </ContentHeader>
+            <Content>
+                <WalletBox 
+                    title="Saldo"
+                    amount={150.00}
+                    footerLabel="Atualizado com base nas entradas e saídas"
+                    icon="dolar"
+                    color="#4E41F0"
+                />
+                <WalletBox 
+                    title="Entradas"
+                    amount={5000.00}
+                    footerLabel="Atualizado com base nas entradas e saídas"
+                    icon="arrowUp"
+                    color="#F7931B"
+                />
+                <WalletBox 
+                    title="Saída"
+                    amount={4850.00}
+                    footerLabel="Atualizado com base nas entradas e saídas"
+                    icon="arrowDown"
+                    color="#E44C4E"
+                />
+            </Content>
         </Container>
     );
 }
