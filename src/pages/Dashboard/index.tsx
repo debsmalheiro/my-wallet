@@ -10,6 +10,11 @@ import SelectInput from '../../components/SelectInput/index';
 import gains from '../../repositories/gains';
 import expenses from '../../repositories/expenses';
 import WalletBox from '../../components/WalletBox';
+import MessageBox from '../../components/MessageBox';
+
+// Images  
+import happyImg from '../../assets/happy.svg';
+import sadImg from '../../assets/sad.svg';
 
 // Utils
 import listOfMonths from '../../utils/months';
@@ -112,6 +117,12 @@ const Dashboard: React.FC = () => {
                     footerLabel="Atualizado com base nas entradas e saídas"
                     icon="arrowDown"
                     color="#E44C4E"
+                />
+                <MessageBox 
+                  title="Muito bem!"
+                  description="Sua carteira está positiva!"
+                  footerText="Continue assim! Considere investir o seu saldo."
+                  icon={happyImg}
                 />
             </Content>
         </Container>
