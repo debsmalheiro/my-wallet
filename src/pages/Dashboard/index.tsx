@@ -19,19 +19,12 @@ import grinningImg from '../../assets/grinning.svg';
 
 // Utils
 import listOfMonths from '../../utils/months';
-import { idText } from 'typescript';
 
 // Component
 const Dashboard: React.FC = () => {
 
     const [monthSelected, setMonthSelected] = useState<number>(new Date().getMonth() + 1);
     const [yearSelected, setYearSelected] = useState<number>(new Date().getFullYear());
-
-    const options = [
-        {value: 'Jolie', label: 'Jolie'},
-        {value: 'Moana', label: 'Moana'},
-        {value: 'Maui', label: 'Maui'},
-    ];
 
     /* Transformando meses */
 
