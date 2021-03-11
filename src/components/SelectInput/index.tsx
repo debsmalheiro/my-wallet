@@ -15,8 +15,7 @@ interface ISelectInputProps {
 }
 
 // Component
-const SelectInput: React.FC<ISelectInputProps> = ({options, onChange, defaultValue}) => {
-    return (
+const SelectInput: React.FC<ISelectInputProps> = ({options, onChange, defaultValue}) => (
         <Container>
             <select onChange={onChange} defaultValue={defaultValue}>
                 {
@@ -31,8 +30,7 @@ const SelectInput: React.FC<ISelectInputProps> = ({options, onChange, defaultVal
                 }
             </select>
         </Container>
-    )
-}
+);
 
 // Export module
 export default SelectInput;
