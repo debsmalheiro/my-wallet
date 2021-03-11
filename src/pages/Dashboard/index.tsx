@@ -1,5 +1,5 @@
 // Dependencies
-import React, {useState, useMemo} from 'react';
+import React, {useState, useMemo, useCallback} from 'react';
 
 // Styles
 import {Container, Content} from './styles';
@@ -66,25 +66,25 @@ const Dashboard: React.FC = () => {
 
     /* Meses */
 
-    const handleMonthSelected = (month: string) => {
+    const handleMonthSelected = useCallback((month: string) => {
         try {
           const parseMonth = Number(month);
           setMonthSelected(parseMonth);
         } catch {
           throw new Error('invalid month value. Is accept 0 - 24.')
         }
-      }
+      }, []);
 
       /* Anos */
     
-      const handleYearSelected = (year: string) => {
+      const handleYearSelected = useCallback((year: string) => {
         try {
           const parseYear = Number(year);
           setYearSelected(parseYear);
         } catch {
           throw new Error('invalid year value. Is accept integer numbers.')
         }
-      }
+      }, []);
 
       /* Informações Dinâmicas */
 
