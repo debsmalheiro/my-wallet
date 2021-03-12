@@ -7,7 +7,7 @@ import AppRoutes from './app.routes';
 import AuthRoutes from './auth.routes';
 
 // hooks
-import {useAuth} from './hooks/auth';
+import {useAuth} from '../hooks/auth';
 
 // Component
 const Routes: React.FC = () => {
