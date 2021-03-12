@@ -1,11 +1,26 @@
 // Dependencies
 import styled from 'styled-components';
 
+// // Interface
+// interface IContainerProps {
+//     menuIsOpen: boolean;
+// }
+
 export const Container = styled.div`
     grid-area: AS;
     background-color: ${props => props.theme.colors.secondary};
     padding-left: 20px;
     border-right: 1px solid ${props => props.theme.colors.gray};
+
+    /* position: relative;
+
+    @media(max-width: 600px) {
+        padding-left: 7px;
+        position: fixed;
+        z-index: 2;
+
+        
+    } */
 `;
 
 export const Header = styled.header`
