@@ -5,13 +5,10 @@ import React, {useState, useMemo} from 'react';
 import { useTheme } from '../../hooks/theme';
 
 // Style
-import { Container, Profile, Welcome, UserName } from './styles';
+import { Container, Profile, Welcome, UserName, Toggle } from './styles';
 
 // Emojis
 import emojis from '../../utils/emojis';
-
-// Components
-import Toggle from '../Toggle';
 
 // Component
 const MainHeader: React.FC = () => {
