@@ -43,8 +43,7 @@ export const LogoImg = styled.img`
     height: 40px;
 
     @media(max-width: 600px) {
-        width: 25px;
-        height: 25px;
+        display: none;
     }
 `;
 
@@ -102,4 +101,28 @@ export const MenuItemButton = styled.button`
         font-size: 18px;
         margin-right: 5px;
     }
+`;
+
+export const ToggleMenu = styled.button`
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 22px;
+    background-color: ${props => props.theme.colors.warning};
+    color: ${props => props.theme.colors.white};
+    transition: opacity 0.3s;
+
+    &:hover {
+        opacity: 0.7s;
+    }
+
+    display: none;
+
+    @media(max-width: 600px){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 `;
