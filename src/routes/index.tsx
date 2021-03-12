@@ -6,13 +6,17 @@ import { BrowserRouter } from 'react-router-dom';
 import AppRoutes from './app.routes';
 import AuthRoutes from './auth.routes';
 
+// hooks
+import {useAuth} from './hooks/auth';
+
 // Component
 const Routes: React.FC = () => {
 
+    const {logged} = useAuth();
+
     return (
         <BrowserRouter>
-            {/* <AppRoutes /> */}
-            <AuthRoutes />
+            {logged ? <AppRoutes/> : <AuthRoutes/>}
         </BrowserRouter>
     )
 }
