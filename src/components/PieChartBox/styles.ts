@@ -42,7 +42,7 @@ export const SideLeft = styled.aside`
     padding: 30px 20px;
 
     @media(max-width: 1345px){
-        padding: 0 15px 5px;
+        padding: 30 15px 0px;
         margin-bottom: 7px;
 
         > h2 {
@@ -52,7 +52,7 @@ export const SideLeft = styled.aside`
     }
 
     @media(max-width: 420px){
-        padding: 15px;
+        padding: 30px 20px;
         margin-bottom: 7px;
     }
 `;

@@ -26,13 +26,13 @@ export const Container = styled.div<IContainerProps>`
         height: ${props => props.menuIsOpen ? '100vh' : '70px'};
         overflow: hidden;
 
+        /* HEADER */
+        width: 170px; 
+        
         ${props => !props.menuIsOpen && css`
             border: none;
             border-bottom: 1px solid ${props => props.theme.colors.gray};
         `};
-
-        /* HEADER */
-        width: 170px;
     }
 `;
 

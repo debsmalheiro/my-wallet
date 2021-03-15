@@ -42,16 +42,15 @@ const Aside: React.FC = () => {
     const [toggleMenuIsOpened, setToggleMenuIsOpened] = useState(false);
     const [darkTheme, setDarkTheme] = useState(() => theme.title === 'dark' ? true : false);
 
-
+    const handleChangeTheme = () => {
+        setToggleMenuIsOpened(!toggleMenuIsOpened);
+    }
+    
     const handleToggleMenu = () => {
         setDarkTheme(!darkTheme);
         toggleTheme();
     }
-
-    const handleChangeTheme = () => {
-        setToggleMenuIsOpened(!toggleMenuIsOpened);
-    }
-
+    
     return (
         <Container menuIsOpen={toggleMenuIsOpened}>
             <Header>
